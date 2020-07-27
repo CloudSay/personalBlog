@@ -1,26 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+# 框架通识
 
-- [MVVM](#mvvm)
-  - [脏数据检测](#%E8%84%8F%E6%95%B0%E6%8D%AE%E6%A3%80%E6%B5%8B)
-  - [数据劫持](#%E6%95%B0%E6%8D%AE%E5%8A%AB%E6%8C%81)
-  - [Proxy 与 Object.defineProperty 对比](#proxy-%E4%B8%8E-objectdefineproperty-%E5%AF%B9%E6%AF%94)
-- [路由原理](#%E8%B7%AF%E7%94%B1%E5%8E%9F%E7%90%86)
-- [Virtual Dom](#virtual-dom)
-  - [为什么需要 Virtual Dom](#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81-virtual-dom)
-  - [Virtual Dom 算法简述](#virtual-dom-%E7%AE%97%E6%B3%95%E7%AE%80%E8%BF%B0)
-  - [Virtual Dom 算法实现](#virtual-dom-%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0)
-    - [树的递归](#%E6%A0%91%E7%9A%84%E9%80%92%E5%BD%92)
-    - [判断属性的更改](#%E5%88%A4%E6%96%AD%E5%B1%9E%E6%80%A7%E7%9A%84%E6%9B%B4%E6%94%B9)
-    - [判断列表差异算法实现](#%E5%88%A4%E6%96%AD%E5%88%97%E8%A1%A8%E5%B7%AE%E5%BC%82%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0)
-    - [遍历子元素打标识](#%E9%81%8D%E5%8E%86%E5%AD%90%E5%85%83%E7%B4%A0%E6%89%93%E6%A0%87%E8%AF%86)
-    - [渲染差异](#%E6%B8%B2%E6%9F%93%E5%B7%AE%E5%BC%82)
-  - [最后](#%E6%9C%80%E5%90%8E)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# MVVM
+## MVVM
 
 MVVM 由以下三个内容组成
 
@@ -34,13 +14,13 @@ MVVM 由以下三个内容组成
 
 在 MVVM 中，最核心的也就是数据双向绑定，例如 Angluar 的脏数据检测，Vue 中的数据劫持。
 
-## 脏数据检测
+### 脏数据检测
 
 当触发了指定事件后会进入脏数据检测，这时会调用 `$digest` 循环遍历所有的数据观察者，判断当前值是否和先前的值有区别，如果检测到变化的话，会调用 `$watch` 函数，然后再次调用 `$digest` 循环直到发现没有变化。循环至少为二次 ，至多为十次。
 
 脏数据检测虽然存在低效的问题，但是不关心数据是通过什么方式改变的，都可以完成任务，但是这在 Vue 中的双向绑定是存在问题的。并且脏数据检测可以实现批量检测出更新的值，再去统一更新 UI，大大减少了操作 DOM 的次数。所以低效也是相对的，这就仁者见仁智者见智了。
 
-## 数据劫持
+### 数据劫持
 
 Vue 内部使用了 `Object.defineProperty()` 来实现双向绑定，通过这个函数可以监听到 `set` 和 `get` 的事件。
 
@@ -169,7 +149,7 @@ function defineReactive(obj, key, val) {
 
 以上实现了一个简易的双向绑定，核心思路就是手动触发一次属性的 getter 来实现发布订阅的添加。
 
-## Proxy 与 Object.defineProperty 对比
+### Proxy 与 Object.defineProperty 对比
 
 `Object.defineProperty` 虽然已经能够实现双向绑定了，但是他还是有缺陷的。
 
@@ -244,7 +224,7 @@ p.a = 2 // bind `value` to `2`
 p.a // -> Get 'a' = 2
 ```
 
-# 路由原理
+## 路由原理
 
 前端路由实现起来其实很简单，本质就是监听 URL 的变化，然后匹配路由规则，显示相应的页面，并且无须刷新。目前单页面使用的路由就只有两种实现方式
 
@@ -259,11 +239,11 @@ History 模式是 HTML5 新推出的功能，比之 Hash URL 更加美观
 
 ![](https://yck-1254263422.cos.ap-shanghai.myqcloud.com/blog/2019-06-01-042514.png)
 
-# Virtual Dom
+## Virtual Dom
 
 [代码地址](https://github.com/KieSun/My-wheels/tree/master/Virtual%20Dom)
 
-## 为什么需要 Virtual Dom
+### 为什么需要 Virtual Dom
 
 众所周知，操作 DOM 是很耗费性能的一件事情，既然如此，我们可以考虑通过 JS 对象来模拟 DOM 对象，毕竟操作 JS 对象比操作 DOM 省时的多。
 
@@ -367,7 +347,7 @@ export default class Element {
 }
 ```
 
-## Virtual Dom 算法简述
+### Virtual Dom 算法简述
 
 既然我们已经通过 JS 来模拟实现了 DOM，那么接下来的难点就在于如何判断旧的对象和新的对象之间的差异。
 
@@ -380,9 +360,9 @@ DOM 是多叉树的结构，如果需要完整的对比两颗树的差异，那�
 - 首先从上至下，从左往右遍历对象，也就是树的深度遍历，这一步中会给每个节点添加索引，便于最后渲染差异
 - 一旦节点有子元素，就去判断子元素是否有不同
 
-## Virtual Dom 算法实现
+### Virtual Dom 算法实现
 
-### 树的递归
+#### 树的递归
 
 首先我们来实现树的递归算法，在实现该算法前，先来考虑下两个节点对比会有几种情况
 
@@ -431,7 +411,7 @@ function dfs(oldNode, newNode, index, patches) {
 }
 ```
 
-### 判断属性的更改
+#### 判断属性的更改
 
 判断属性的更改也分三个步骤
 
@@ -474,7 +454,7 @@ function diffProps(oldProps, newProps) {
 
 ```
 
-### 判断列表差异算法实现
+#### 判断列表差异算法实现
 
 这个算法是整个 Virtual Dom 中最核心的算法，且让我一一为你道来。
 这里的主要步骤其实和判断属性差异是类似的，也是分为三步
@@ -577,7 +557,7 @@ function getKeys(list) {
 }
 ```
 
-### 遍历子元素打标识
+#### 遍历子元素打标识
 
 对于这个函数来说，主要功能就两个
 
@@ -616,7 +596,7 @@ function diffChildren(oldChild, newChild, index, patches) {
 }
 ```
 
-### 渲染差异
+#### 渲染差异
 
 通过之前的算法，我们已经可以得出两个树的差异了。既然知道了差异，就需要局部去更新 DOM 了，下面就让我们来看看 Virtual Dom 算法的最后一步骤
 
@@ -693,7 +673,7 @@ function changeDom(node, changes, noChild) {
 }
 ```
 
-## 最后
+### 最后
 
 Virtual Dom 算法的实现也就是以下三步
 

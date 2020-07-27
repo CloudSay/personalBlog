@@ -1,49 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+# JS
 
-- [内置类型](#%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B)
-- [Typeof](#typeof)
-- [类型转换](#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2)
-  - [转Boolean](#%E8%BD%ACboolean)
-  - [对象转基本类型](#%E5%AF%B9%E8%B1%A1%E8%BD%AC%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B)
-  - [四则运算符](#%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97%E7%AC%A6)
-  - [`==` 操作符](#-%E6%93%8D%E4%BD%9C%E7%AC%A6)
-  - [比较运算符](#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6)
-- [原型](#%E5%8E%9F%E5%9E%8B)
-- [new](#new)
-- [instanceof](#instanceof)
-- [this](#this)
-- [执行上下文](#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87)
-- [闭包](#%E9%97%AD%E5%8C%85)
-- [深浅拷贝](#%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D)
-  - [浅拷贝](#%E6%B5%85%E6%8B%B7%E8%B4%9D)
-  - [深拷贝](#%E6%B7%B1%E6%8B%B7%E8%B4%9D)
-- [模块化](#%E6%A8%A1%E5%9D%97%E5%8C%96)
-  - [CommonJS](#commonjs)
-  - [AMD](#amd)
-- [防抖](#%E9%98%B2%E6%8A%96)
-- [节流](#%E8%8A%82%E6%B5%81)
-- [继承](#%E7%BB%A7%E6%89%BF)
-- [call, apply, bind 区别](#call-apply-bind-%E5%8C%BA%E5%88%AB)
-  - [模拟实现 call 和 apply](#%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0-call-%E5%92%8C-apply)
-- [Promise 实现](#promise-%E5%AE%9E%E7%8E%B0)
-- [Generator 实现](#generator-%E5%AE%9E%E7%8E%B0)
-- [Map、FlatMap 和 Reduce](#mapflatmap-%E5%92%8C-reduce)
-- [async 和 await](#async-%E5%92%8C-await)
-- [Proxy](#proxy)
-- [为什么 0.1 + 0.2 != 0.3](#%E4%B8%BA%E4%BB%80%E4%B9%88-01--02--03)
-- [正则表达式](#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
-  - [元字符](#%E5%85%83%E5%AD%97%E7%AC%A6)
-  - [修饰语](#%E4%BF%AE%E9%A5%B0%E8%AF%AD)
-  - [字符简写](#%E5%AD%97%E7%AC%A6%E7%AE%80%E5%86%99)
-- [V8 下的垃圾回收机制](#v8-%E4%B8%8B%E7%9A%84%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6)
-  - [新生代算法](#%E6%96%B0%E7%94%9F%E4%BB%A3%E7%AE%97%E6%B3%95)
-  - [老生代算法](#%E8%80%81%E7%94%9F%E4%BB%A3%E7%AE%97%E6%B3%95)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# 内置类型
+## 内置类型
 
 JS 中分为七种内置类型，七种内置类型又分为两大类型：基本类型和对象（Object）。
 
@@ -67,7 +24,7 @@ b.name = 'EF'
 console.log(a.name) // EF
 ```
 
-# Typeof
+## Typeof
 
 `typeof` 对于基本类型，除了 `null` 都可以显示正确的类型
 
@@ -113,11 +70,11 @@ a === void 0
 
 # 类型转换
 
-## 转Boolean
+### 转Boolean
 
 在条件判断时，除了 `undefined`， `null`， `false`， `NaN`， `''`， `0`， `-0`，其他所有值都转为 `true`，包括所有对象。
 
-## 对象转基本类型
+### 对象转基本类型
 
 对象在转换基本类型时，首先会调用 `valueOf` 然后调用 `toString`。并且这两个方法你是可以重写的。
 
@@ -147,7 +104,7 @@ let a = {
 '1' + a // => '12'
 ```
 
-## 四则运算符
+### 四则运算符
 
 只有当加法运算时，其中一方是字符串类型，就会把另一个也转为字符串类型。其他运算只要其中一方是数字，那么另一方就转为数字。并且加法运算会触发三种类型转换：将值转换为原始值，转换为数字，转换为字符串。
 
@@ -168,7 +125,7 @@ let a = {
 // 你也许在一些代码中看到过 + '1' -> 1
 ```
 
-## `==` 操作符
+### `==` 操作符
 
 ![](https://yck-1254263422.cos.ap-shanghai.myqcloud.com/blog/2019-06-01-042612.png)
 
@@ -190,7 +147,7 @@ ToPrimitive([]) == 0
 0 == 0 // -> true
 ```
 
-## 比较运算符
+### 比较运算符
 
 1. 如果是对象，就通过 `toPrimitive` 转换对象
 2. 如果是字符串，就通过 `unicode` 字符索引来比较
@@ -207,7 +164,7 @@ ToPrimitive([]) == 0
 
 如果你想更进一步的了解原型，可以仔细阅读 [深度解析原型中的各个难点](https://github.com/KieSun/Blog/issues/2)。
 
-# new
+## new
 
 1. 新生成了一个对象
 2. 链接到原型
@@ -270,7 +227,7 @@ new (Foo.getName());
 
 对于第一个函数来说，先执行了 `Foo.getName()` ，所以结果为 1；对于后者来说，先执行 `new Foo()` 产生了一个实例，然后通过原型链找到了 `Foo` 上的 `getName` 函数，所以结果为 2。
 
-# instanceof
+## instanceof
 
 `instanceof` 可以正确的判断对象的类型，因为内部机制是通过判断对象的原型链中是不是能找到类型的 `prototype`。
 
@@ -293,7 +250,7 @@ function instanceof(left, right) {
 }
 ```
 
-# this
+## this
 
 `this` 是很多人会混淆的概念，但是其实他一点都不难，你只需要记住几个规则就可以了。
 
@@ -335,7 +292,7 @@ console.log(a()()())
 
 箭头函数其实是没有 `this` 的，这个函数中的 `this` 只取决于他外面的第一个不是箭头函数的函数的 `this`。在这个例子中，因为调用 `a` 符合前面代码中的第一个情况，所以 `this` 是 `window`。并且 `this` 一旦绑定了上下文，就不会被任何代码改变。
 
-# 执行上下文
+## 执行上下文
 当执行 JS 代码时，会产生三种执行上下文
 
 - 全局执行上下文
@@ -458,7 +415,7 @@ specialObject.foo = foo; // {DontDelete}, {ReadOnly}
 delete Scope[0]; // remove specialObject from the front of scope chain
  ```
 
-# 闭包
+## 闭包
 
 闭包的定义很简单：函数 A 返回了一个函数 B，并且函数 B 中使用了函数 A 的变量，函数 B 就被称为闭包。
 
@@ -541,7 +498,7 @@ for ( let i=1; i<=5; i++) {
 }
 ```
 
-# 深浅拷贝
+## 深浅拷贝
 
 ```js
 let a = {
@@ -556,7 +513,7 @@ console.log(b.age) // 2
 
 通常在开发中我们不希望出现这样的问题，我们可以使用浅拷贝来解决这个问题。
 
-## 浅拷贝
+### 浅拷贝
 
 首先可以通过 `Object.assign` 来解决这个问题。
 
@@ -596,7 +553,7 @@ console.log(b.jobs.first) // native
 
 浅拷贝只解决了第一层的问题，如果接下去的值中还有对象的话，那么就又回到刚开始的话题了，两者享有相同的引用。要解决这个问题，我们需要引入深拷贝。
 
-## 深拷贝
+### 深拷贝
 
 这个问题通常可以通过 `JSON.parse(JSON.stringify(object))` 来解决。
 
@@ -678,7 +635,7 @@ var obj = {a: 1, b: {
 })()
 ```
 
-# 模块化
+## 模块化
 
 在有 Babel 的情况下，我们可以直接使用 ES6 的模块化
 
@@ -693,7 +650,7 @@ import {a, b} from './a.js'
 import XXX from './b.js'
 ```
 
-## CommonJS
+### CommonJS
 
 `CommonJs` 是 Node 独有的规范，浏览器中使用就需要用到 `Browserify` 解析了。
 
@@ -744,7 +701,7 @@ var load = function (module) {
 - 前者在导出时都是值拷贝，就算导出的值变了，导入的值也不会改变，所以如果想更新值，必须重新导入一次。但是后者采用实时绑定的方式，导入导出的值都指向同一个内存地址，所以导入值会跟随导出值变化
 - 后者会编译成 `require/exports` 来执行的
 
-## AMD
+### AMD
 
 AMD 是由 `RequireJS` 提出的
 
@@ -762,7 +719,7 @@ define(function(require, exports, module) {
 })
 
 ```
-# 防抖
+## 防抖
 
 你是否在日常开发中遇到一个问题，在滚动事件中需要做个复杂计算或者实现一个按钮的防二次点击操作。
 
@@ -853,7 +810,7 @@ function debounce (func, wait = 50, immediate = true) {
 - 对于按钮防点击来说的实现：如果函数是立即执行的，就立即调用，如果函数是延迟执行的，就缓存上下文和参数，放到延迟函数中去执行。一旦我开始一个定时器，只要我定时器还在，你每次点击我都重新计时。一旦你点累了，定时器时间到，定时器重置为 `null`，就可以再次点击了。
 - 对于延时执行函数来说的实现：清除定时器ID，如果是延迟调用就调用函数
 
-# 节流
+## 节流
 
 防抖动和节流本质是不一样的。防抖动是将多次执行变为最后一次执行，节流是将多次执行变成每隔一段时间执行。
 
@@ -925,7 +882,7 @@ _.throttle = function(func, wait, options) {
   };
 ```
 
-# 继承
+## 继承
 
 在 ES5 中，我们可以使用如下方式解决继承的问题
 
@@ -987,7 +944,7 @@ Object.setPrototypeOf(MyData.prototype, Date.prototype)
 
 通过以上方法实现的继承就可以完美解决 JS 底层的这个限制。
 
-# call, apply, bind 区别
+## call, apply, bind 区别
 
 首先说下前两者的区别。
 
@@ -1008,7 +965,7 @@ getValue.call(a, 'yck', '24')
 getValue.apply(a, ['yck', '24'])
 ```
 
-## 模拟实现 call 和 apply
+### 模拟实现 call 和 apply
 
 可以从以下几点来考虑如何实现
 
@@ -1074,7 +1031,7 @@ Function.prototype.myBind = function (context) {
 }
 ```
 
-# Promise 实现
+## Promise 实现
 
 Promise 是 ES6 新增的语法，解决了回调地狱的问题。
 
@@ -1259,7 +1216,7 @@ function resolutionProcedure(promise2, x, resolve, reject) {
 
 ![](https://yck-1254263422.cos.ap-shanghai.myqcloud.com/blog/2019-06-01-042629.png)
 
-# Generator 实现
+## Generator 实现
 
 Generator 是 ES6 中新增的语法，和 Promise 一样，都可以用来异步编程
 
@@ -1327,7 +1284,7 @@ function test() {
 }
 ```
 
-# Map、FlatMap 和 Reduce
+## Map、FlatMap 和 Reduce
 
 `Map` 作用是生成一个新数组，遍历原数组，将每个元素拿出来做一些变换然后 `append` 到新的数组中。
 
@@ -1377,7 +1334,7 @@ function b() {
 // -> 2 1
 ```
 
-# async 和 await
+## async 和 await
 
 一个函数如果加上 `async` ，那么该函数就会返回一个 `Promise`
 
@@ -1434,7 +1391,7 @@ console.log('1', a) // -> '1' 1
 - 这时候同步代码执行完毕，开始执行异步代码，将保存下来的值拿出来使用，这时候 `a = 10`
 - 然后后面就是常规执行代码了
 
-# Proxy
+## Proxy
 
 Proxy 是 ES6 中新增的功能，可以用来自定义对象中的操作
 
@@ -1472,7 +1429,7 @@ p.a = 2 // bind `value` to `2`
 p.a // -> Get 'a' = 2
 ```
 
-# 为什么 0.1 + 0.2 != 0.3
+## 为什么 0.1 + 0.2 != 0.3
 
 因为 JS 采用 IEEE 754 双精度版本（64位），并且只要采用 IEEE 754 的语言都有该问题。
 
@@ -1497,9 +1454,9 @@ p.a // -> Get 'a' = 2
 ```js
 parseFloat((0.1 + 0.2).toFixed(10))
 ```
-# 正则表达式
+## 正则表达式
 
-## 元字符
+### 元字符
 
 | 元字符 |                             作用                             |
 | :----: | :----------------------------------------------------------: |
@@ -1514,7 +1471,7 @@ parseFloat((0.1 + 0.2).toFixed(10))
 |   +    |                只匹配出现 1 次及以上 + 前的字符                |
 |   ?    |                        ? 之前字符可选                        |
 
-## 修饰语
+### 修饰语
 
 | 修饰语 |    作用    |
 | :----: | :--------: |
@@ -1522,7 +1479,7 @@ parseFloat((0.1 + 0.2).toFixed(10))
 |   g    |  全局搜索  |
 |   m    |    多行    |
 
-## 字符简写
+### 字符简写
 
 | 简写 |         作用         |
 | :--: | :------------------: |
@@ -1535,17 +1492,17 @@ parseFloat((0.1 + 0.2).toFixed(10))
 |  \b  | 匹配单词的开始或结束 |
 |  \B  |      和上面相反      |
 
-# V8 下的垃圾回收机制
+## V8 下的垃圾回收机制
 
 V8 实现了准确式 GC，GC 算法采用了分代式垃圾回收机制。因此，V8 将内存（堆）分为新生代和老生代两部分。
 
-## 新生代算法
+### 新生代算法
 
 新生代中的对象一般存活时间较短，使用 Scavenge GC 算法。
 
 在新生代空间中，内存空间分为两部分，分别为 From 空间和 To 空间。在这两个空间中，必定有一个空间是使用的，另一个空间是空闲的。新分配的对象会被放入 From 空间中，当 From 空间被占满时，新生代 GC 就会启动了。算法会检查 From 空间中存活的对象并复制到 To 空间中，如果有失活的对象就会销毁。当复制完成后将 From 空间和 To 空间互换，这样 GC 就结束了。
 
-## 老生代算法
+### 老生代算法
 
 老生代中的对象一般存活时间较长且数量也多，使用了两个算法，分别是标记清除算法和标记压缩算法。
 

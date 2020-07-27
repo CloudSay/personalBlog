@@ -1,20 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+# Vue
 
-- [NextTick 原理分析](#nexttick-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90)
-- [生命周期分析](#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%88%86%E6%9E%90)
-- [VueRouter 源码解析](#vuerouter-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90)
-  - [重要函数思维导图](#%E9%87%8D%E8%A6%81%E5%87%BD%E6%95%B0%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE)
-  - [路由注册](#%E8%B7%AF%E7%94%B1%E6%B3%A8%E5%86%8C)
-  - [VueRouter 实例化](#vuerouter-%E5%AE%9E%E4%BE%8B%E5%8C%96)
-  - [创建路由匹配对象](#%E5%88%9B%E5%BB%BA%E8%B7%AF%E7%94%B1%E5%8C%B9%E9%85%8D%E5%AF%B9%E8%B1%A1)
-  - [路由初始化](#%E8%B7%AF%E7%94%B1%E5%88%9D%E5%A7%8B%E5%8C%96)
-  - [路由跳转](#%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# NextTick 原理分析
+## NextTick 原理分析
 
 `nextTick` 可以让我们在下次 DOM 更新循环结束之后执行延迟回调，用于获得更新后的 DOM。
 
@@ -83,7 +69,7 @@ export function nextTick(cb?: Function, ctx?: Object) {
 }
 ```
 
-# 生命周期分析
+## 生命周期分析
 
 生命周期函数就是组件在初始化或者数据更新时会触发的钩子函数。
 
@@ -212,14 +198,14 @@ Vue.prototype.$destroy = function() {
 
 在执行销毁操作前会调用 `beforeDestroy` 钩子函数，然后进行一系列的销毁操作，如果有子组件的话，也会递归销毁子组件，所有子组件都销毁完毕后才会执行根组件的 `destroyed` 钩子函数。
 
-# VueRouter 源码解析
+## VueRouter 源码解析
 
-## 重要函数思维导图
+### 重要函数思维导图
 
 以下思维导图罗列了源码中重要的一些函数
 ![](https://yck-1254263422.cos.ap-shanghai.myqcloud.com/blog/2019-06-01-042517.png)
 
-## 路由注册
+### 路由注册
 
 在开始之前，推荐大家 clone 一份源码对照着看。因为篇幅较长，函数间的跳转也很多。
 
@@ -293,7 +279,7 @@ export function install (Vue) {
 ```
 对于路由注册来说，核心就是调用 `Vue.use(VueRouter)`，使得 VueRouter 可以使用 Vue。然后通过 Vue 来调用 VueRouter 的 `install` 函数。在该函数中，核心就是给组件混入钩子函数和全局注册两个路由组件。
 
-## VueRouter 实例化
+### VueRouter 实例化
 在安装插件后，对 VueRouter 进行实例化。
 ```js
 const Home = { template: '<div>home</div>' }
@@ -349,7 +335,7 @@ constructor(options: RouterOptions = {}) {
 ```
 在实例化 VueRouter 的过程中，核心是创建一个路由匹配对象，并且根据 mode 来采取不同的路由方式。
 
-## 创建路由匹配对象
+### 创建路由匹配对象
 
 ```js
 export function createMatcher (
@@ -501,7 +487,7 @@ function addRouteRecord (
 }
 ```
 以上就是创建路由匹配对象的全过程，通过用户配置的路由规则来创建对应的路由映射表。
-## 路由初始化
+### 路由初始化
 
 当根组件调用 `beforeCreate` 钩子函数时，会执行以下代码
 ```js
@@ -555,7 +541,7 @@ init(app: any /* Vue component instance */) {
   }
 ```
 在路由初始化时，核心就是进行路由的跳转，改变 URL 然后渲染对应的组件。接下来来看一下路由是如何进行跳转的。
-## 路由跳转
+### 路由跳转
 ```js
 transitionTo (location: RawLocation, onComplete?: Function, onAbort?: Function) {
   // 获取匹配的路由信息
