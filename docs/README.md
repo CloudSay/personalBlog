@@ -1,53 +1,144 @@
-<img align="center" src='./InterviewMap.png' />
+# markdown 文件的基本常用编写语法
 
-<h1 align="center">
-  Interview Map
-</h1>
+## 1、标题的几种写法
 
-<h4 align="center">这是一份能让你更好准备下一次面试的图谱</h4>
+- 第一种：
+  > # 一级标题
+  >
+  > ## 二级标题
+  >
+  > .
+  > .
+  > .
+  > ####### 七级标题
+- 第二种：
+  > # 这是一级标题
+  >
+  > 这是二级标题
 
-[English Version](./README-EN.md)
+---
 
-## 阅读
+- 第三种：
+  > # 一级标题
+  >
+  > ## 二级标题
 
-| 微信扫码关注公众号，订阅更多精彩内容                                                                 | 加笔者微信进群与大厂大佬讨论技术                                                                    |
-| ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| <img src="https://yck-1254263422.cos.ap-shanghai.myqcloud.com/20191220223702.jpeg" width="500px;" /> | <img src="https://yck-1254263422.cos.ap-shanghai.myqcloud.com/20191220224224.png" width="260px;" /> |
+## 2、列表
 
-[线上版本阅读更清晰](https://yuchengkai.cn/docs/zh/)
+> 无序列表可以用* ， + ， — 来创建，用在线编辑器看，实际上是转换成了 ul>li ，所以使用哪个都可以，推荐使用*吧
+> 有序列表就相对简单一点，只有这一种方式，注意，数字后面的点只能是英文的点，特别注意，有序列表的序号是根据第一行列表的数字顺序来的
+>
+> 1. 列表 1
+> 2. 列表 2
+> 3. 列表 3
 
-## 小册
+## 3、区块引用
 
-很荣幸在「掘金」平台发售了这个开源项目的进阶版面试小册「前端面试之道」。
+- 比如说，你想对某个部分做的内容做一些说明或者引用某某的话等，可以用这个语句
+  > 区块引用区块引用区块引用区块引用区块引用区块引用区块引用区块引用区块引用区块引用区块引用区块引用区块引用区块引用区块引用区块引用
+- 引用嵌套
+  > 一级引用
+  >
+  > > 二级引用
+  > >
+  > > > 三级引用
+  > > >
+  > > > > 四级引用
+  > > > >
+  > > > > > 五级引用
+  > > > > >
+  > > > > > > 六级引用
 
-<p align="center">
-  <img src='https://user-gold-cdn.xitu.io/2018/12/25/167e354c41bbe3ef?w=750&h=1334&f=jpeg&s=110064' width='400' />
-</p>
+## 4、华丽的分割线
 
-如果需要用一句话来介绍这本小册的话，「**一年磨一剑**」应该是最好的答案了。
+---
 
-为什么这样说呢？在出小册之前，我花了半年的时间做了一个这个开源项目。在半年的时间里，我收集了大量的一线大厂面试题，通过大数据统计出了近百个常考知识点，然后根据这些知识点写成了**近十万字**的内容。
+---
 
-![](https://yck-1254263422.cos.ap-shanghai.myqcloud.com/blog/2019-06-01-042717.png)
+---
 
-这本小册是基于本开源项目重新写的一份前端面试书籍（目前已经写作三个月，预计成品需要五个月），对原本的内容进行了大幅度的优化，并且新增了很多新的内容。这本小册可以说是一线互联网大厂的面试精华总结，同时还包含了如何写简历和面试技巧的内容，能够帮助你省时省力地准备面试，让找工作不再是一个难题。
+---
 
-当然小册面向的群体不单单是求职者，同时也适合初级进阶，中级查漏补缺。如果你是一名面试官的话，说不定这本小册也能给你带来一些灵感。
+---
 
-面试是每个程序员都绕不开的坎，虽然这本小册不能帮你一夜之间技术一蹴而就，但是如果你能**细细阅读**的话，绝对能让你醍醐灌顶。
+---
 
-如果你对于内容不放心的话，可以看一下这两位业内大佬的评价，他们都是仔细读过小册后才给出的一个推荐。
+## 5、链接
 
-![](https://yck-1254263422.cos.ap-shanghai.myqcloud.com/blog/2019-06-01-042719.png)
+![图片](http://pic1.win4000.com/wallpaper/9/5450ae2fdef8a.jpg)
+[src]:http://pic1.win4000.com/wallpaper/9/5450ae2fdef8a.jpg
 
-![](https://yck-1254263422.cos.ap-shanghai.myqcloud.com/blog/2019-06-01-042722.png)
+这里是 ![src]
 
-## 贡献
+### 行内式
 
-如果你发现知识点内容有出错或者代码有 Bug，欢迎你提交英文 [issue](https://github.com/InterviewMap/CS-Interview-Knowledge-Map/issues/new)，如果你英文不好的话，请在 [该 issue](https://github.com/InterviewMap/CS-Interview-Knowledge-Map/issues/18) 中讨论
+[妙语连珠](http://wwww.baidu.com)是什么意思？
 
-如果你认为有一个不错的知识点或者也想参与翻译校对，欢迎提交 [PR](https://github.com/InterviewMap/CS-Interview-Knowledge-Map/pulls)，或者也可以联系我 <zx597813039@gmail.com>
+### 参数式
 
-## 协议
+[name]: http://wwww.baidu.com/name "名称"
+[home]: http://wwww.baidu.com/home "首页"
+[也支持中文]: http://wwww.baidu.com/ "test"
 
-[MIT](LICENSE). Copyright (c)
+这里是[name]，这里是[home]，这里是[也支持中文]
+
+## 6、图片
+
+## 7、代码框
+
+- 单行
+  `import api from '../../../../../System resolution/web-rule-sys/src/api/api';`
+- 多行
+
+```可以写注释
+      // 筛选变量
+      if (this.search.variable === '') {
+        listArray = questionListDateStorage;
+      } else {
+        for (let listKey in questionListDateStorage) {
+          var variables = questionListDateStorage[listKey].variables;
+          for (let varKey in variables) {
+            var name = variables[varKey].name;
+            console.log(name.indexOf(this.search.variable));
+            if (name.indexOf(this.search.variable) >= 0) {
+              listArray.push(questionListDateStorage[listKey]);
+              break;
+            }
+          }
+        }
+      }
+```
+
+## 8、表格
+
+| name | age | sex |
+| :--- | :-- | :-: |
+| tony | 20  | 男  |
+| lucy | 18  | 女  |
+
+| 表头一       | 表头二       |
+| ------------ | ------------ |
+| content cell | content cell |
+| content cell | content cell |
+
+| 学号 | 姓名 | 分数 |
+| ---- | ---- | ---- |
+| 小明 | 男   | 75   |
+| 小红 | 女   | 79   |
+| 小陆 | 男   | 92   |
+
+## 9、强调
+
+_字体倾斜_
+_字体倾斜_
+**字体加粗**
+**字体加粗**
+
+## 10、转义
+
+- \\
+- 基本上跟 js 转义是一样的
+
+## 11、删除线
+
+~~请删掉我把~~
