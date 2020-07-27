@@ -1,7 +1,10 @@
 module.exports = {
+  base:'/personalBlog/',
   title: 'cloudSay',
   description: 'personal blog',
-  base:'/personalBlog/',
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   themeConfig: {
     logo: '/assets/img/logo.png',
     nav: [
