@@ -9,6 +9,8 @@ module.exports = {
       { text: 'GIT', link: '/git/git-zh' },
       { text: 'js', link: '/js/js-ch' },
     ],
-    sidebar: 'auto'
+    sidebarDepth: 3, 
+    displayAllHeaders: true, // 默认值：false
+    // sidebar: 'auto'
   }
 }
