@@ -16,13 +16,13 @@ module.exports = {
         items: [
           { text: '前端相关', link: '/frontend/' },
           { text: '计算机基础知识相关',link: '/computerLiteracy/' },
-          { text: '数据结构分类', link: '/dataStructure/' },
-          { text: '算法分类', link: '/algorithm/' },
-          { text: 'JavaScript', link: '/JavaScript/' },
-          { text: '博客', link: 'http://www.conardli.top/blog/article/' },
-          { text: 'github', link: 'https://github.com/ConardLi' },
         ]
       },
+      { text: '数据结构分类', link: '/dataStructure/' },
+      { text: '算法分类', link: '/algorithm/' },
+      { text: 'JavaScript', link: '/JavaScript/' },
+      // { text: '博客', link: 'http://www.conardli.top/blog/article/' },
+      // { text: 'github', link: 'https://github.com/ConardLi' },
       { text: '学习', link: '/Career/' }
     ],
     sidebarDepth: 3, 
