@@ -31,16 +31,6 @@ export const pagesComponents = {
   "v-96dc9d7a": defineAsyncComponent(() => import(/* webpackChunkName: "v-96dc9d7a" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/frontend/safety.html.vue")),
   // path: /frontend/vue.html
   "v-a43f7ed2": defineAsyncComponent(() => import(/* webpackChunkName: "v-a43f7ed2" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/frontend/vue.html.vue")),
-  // path: /mp/
-  "v-2d0aa553": defineAsyncComponent(() => import(/* webpackChunkName: "v-2d0aa553" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/mp/index.html.vue")),
-  // path: /algorithm/DFS%E5%92%8CBFS/DFS%E5%92%8CBFS.html
-  "v-9be64022": defineAsyncComponent(() => import(/* webpackChunkName: "v-9be64022" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/algorithm/DFS和BFS/DFS和BFS.html.vue")),
-  // path: /algorithm/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.html
-  "v-39703ca3": defineAsyncComponent(() => import(/* webpackChunkName: "v-39703ca3" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/algorithm/动态规划/动态规划.html.vue")),
-  // path: /algorithm/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D.html
-  "v-6871783a": defineAsyncComponent(() => import(/* webpackChunkName: "v-6871783a" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/algorithm/动态规划/打家劫舍.html.vue")),
-  // path: /algorithm/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C.html
-  "v-7aeacc3b": defineAsyncComponent(() => import(/* webpackChunkName: "v-7aeacc3b" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/algorithm/动态规划/最小路径和.html.vue")),
   // path: /JavaScript/EventEmitter.html
   "v-bdf2dd48": defineAsyncComponent(() => import(/* webpackChunkName: "v-bdf2dd48" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/JavaScript/EventEmitter.html.vue")),
   // path: /JavaScript/
@@ -75,8 +65,18 @@ export const pagesComponents = {
   "v-2a8514dd": defineAsyncComponent(() => import(/* webpackChunkName: "v-2a8514dd" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/JavaScript/节流.html.vue")),
   // path: /JavaScript/%E9%98%B2%E6%8A%96.html
   "v-ddc13a20": defineAsyncComponent(() => import(/* webpackChunkName: "v-ddc13a20" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/JavaScript/防抖.html.vue")),
+  // path: /mp/
+  "v-2d0aa553": defineAsyncComponent(() => import(/* webpackChunkName: "v-2d0aa553" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/mp/index.html.vue")),
+  // path: /algorithm/DFS%E5%92%8CBFS/DFS%E5%92%8CBFS.html
+  "v-9be64022": defineAsyncComponent(() => import(/* webpackChunkName: "v-9be64022" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/algorithm/DFS和BFS/DFS和BFS.html.vue")),
   // path: /algorithm/%E5%88%86%E6%B2%BB/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9.html
   "v-db1cfe62": defineAsyncComponent(() => import(/* webpackChunkName: "v-db1cfe62" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/algorithm/分治/数组中的逆序对.html.vue")),
+  // path: /algorithm/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.html
+  "v-39703ca3": defineAsyncComponent(() => import(/* webpackChunkName: "v-39703ca3" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/algorithm/动态规划/动态规划.html.vue")),
+  // path: /algorithm/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D.html
+  "v-6871783a": defineAsyncComponent(() => import(/* webpackChunkName: "v-6871783a" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/algorithm/动态规划/打家劫舍.html.vue")),
+  // path: /algorithm/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C.html
+  "v-7aeacc3b": defineAsyncComponent(() => import(/* webpackChunkName: "v-7aeacc3b" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/algorithm/动态规划/最小路径和.html.vue")),
   // path: /algorithm/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/N%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98.html
   "v-f86203f0": defineAsyncComponent(() => import(/* webpackChunkName: "v-f86203f0" */"D:/self_code/personalBlog/docs/.vuepress/.temp/pages/algorithm/回溯算法/N皇后问题.html.vue")),
   // path: /algorithm/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/N%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%982.html

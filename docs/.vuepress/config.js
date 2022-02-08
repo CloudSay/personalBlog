@@ -265,4 +265,21 @@ module.exports = {
     // 默认为 "Edit this page"
     editLinkText: "帮助我们改善此页面！",
   },
+  plugins: [
+    [
+      "@vuepress/plugin-search",
+      {
+        locales: {
+          "/": {
+            placeholder: "搜索",
+          },
+          "/zh/": {
+            placeholder: "搜索",
+          },
+        },
+        // 允许搜索 Frontmatter 中的 `tags`
+        getExtraFields: (page) => page.frontmatter.tags ?? [],
+      },
+    ],
+  ],
 };

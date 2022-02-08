@@ -24,28 +24,38 @@ import {
   watch,
   watchEffect,
   watchSyncEffect
-} from "./chunk-GRMYOURA.js";
-import "./chunk-YCMUUTHR.js";
+} from "./chunk-DKOV2EIV.js";
+import "./chunk-LRA2PVGZ.js";
 import {
   init_define_EXTERNAL_LINK_ICON_LOCALES,
-  init_define_MZ_ZOOM_OPTIONS
-} from "./chunk-2SZL67VI.js";
+  init_define_MZ_ZOOM_OPTIONS,
+  init_define_SEARCH_HOT_KEYS,
+  init_define_SEARCH_LOCALES
+} from "./chunk-NIBPD5PU.js";
 
 // dep:@vueuse_core
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
+init_define_SEARCH_HOT_KEYS();
+init_define_SEARCH_LOCALES();
 
 // node_modules/@vueuse/core/index.mjs
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
+init_define_SEARCH_HOT_KEYS();
+init_define_SEARCH_LOCALES();
 
 // node_modules/@vueuse/shared/index.mjs
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
+init_define_SEARCH_HOT_KEYS();
+init_define_SEARCH_LOCALES();
 
 // node_modules/vue-demi/lib/index.mjs
 init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
+init_define_SEARCH_HOT_KEYS();
+init_define_SEARCH_LOCALES();
 var isVue2 = false;
 var isVue3 = true;
 function set(target, key, val) {

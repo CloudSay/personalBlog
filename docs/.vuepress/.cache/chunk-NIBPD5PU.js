@@ -17,9 +17,23 @@ var init_define_MZ_ZOOM_OPTIONS = __esm({
   }
 });
 
+// <define:__SEARCH_HOT_KEYS__>
+var init_define_SEARCH_HOT_KEYS = __esm({
+  "<define:__SEARCH_HOT_KEYS__>"() {
+  }
+});
+
+// <define:__SEARCH_LOCALES__>
+var init_define_SEARCH_LOCALES = __esm({
+  "<define:__SEARCH_LOCALES__>"() {
+  }
+});
+
 export {
   __commonJS,
   init_define_EXTERNAL_LINK_ICON_LOCALES,
-  init_define_MZ_ZOOM_OPTIONS
+  init_define_MZ_ZOOM_OPTIONS,
+  init_define_SEARCH_HOT_KEYS,
+  init_define_SEARCH_LOCALES
 };
-//# sourceMappingURL=chunk-2SZL67VI.js.map
+//# sourceMappingURL=chunk-NIBPD5PU.js.map
