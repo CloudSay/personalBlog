@@ -41,9 +41,9 @@ jobs:
         run: yarn docs:build
 
       # 查看 workflow 的文档来获取更多信息
-      # @see https://github.com/crazy-max/ghaction-github-pages
+      # @see https://github.com/CloudSay/personalBlog
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
+        uses: CloudSay/personalBlog@v2
         # 环境变量
         env:
           GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }}
