@@ -10,7 +10,7 @@ export const data = {
     "actionLink": "/dataStructure/",
     "features": [
       {
-        "title": "小程序专题aa",
+        "title": "小程序专题aa啊啊",
         "details": "小程序登录、图片导出、工程化及持续集成。"
       },
       {
@@ -39,12 +39,17 @@ export const data = {
   "excerpt": "",
   "headers": [],
   "git": {
-    "updatedTime": 1613647597000,
+    "updatedTime": 1644301930000,
     "contributors": [
       {
         "name": "yunfei.huang",
         "email": "yunfei.huang@aliyun.com",
         "commits": 4
+      },
+      {
+        "name": "黄飞鸿",
+        "email": "v.huangyf@yoozoo.com",
+        "commits": 1
       }
     ]
   },
