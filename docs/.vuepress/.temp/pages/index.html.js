@@ -10,7 +10,7 @@ export const data = {
     "actionLink": "/dataStructure/",
     "features": [
       {
-        "title": "小程序专题",
+        "title": "小程序专题aa",
         "details": "小程序登录、图片导出、工程化及持续集成。"
       },
       {
