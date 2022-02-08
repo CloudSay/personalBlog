@@ -4,7 +4,7 @@ heroImage: ./assets/img/logo.png
 actionText: 开始阅读 →
 actionLink: /dataStructure/
 features:
-  - title: 小程序专题aa啊啊
+  - title: 小程序专题
     details: 小程序登录、图片导出、工程化及持续集成。
   - title: 面试-前端相关
     details: 基础知识梳理。
