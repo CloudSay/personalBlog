@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-568d3b89","path":"/JavaScript/","title":"JavaScript专题","lang":"en-US","frontmatter":{"title":"JavaScript专题"},"headers":[],"git":{"updatedTime":1613642514000,"contributors":[{"name":"yunfei.huang","email":"yunfei.huang@aliyun.com","commits":1}]},"filePathRelative":"JavaScript/README.md"}');export{a as data};
