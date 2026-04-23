@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           # 选择要使用的 node 版本
-          node-version: "20"
+          node-version: "18"
           cache: 'yarn'
 
       # 如果缓存没有命中，安装依赖
@@ -33,12 +33,8 @@ jobs:
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/CloudSay/personalBlog
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v4
-        # 环境变量
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTION_SECERT }}
+        uses: peaceiris/actions-gh-pages@v4
         with:
           # 部署到 gh-pages 分支
-          target_branch: gh-pages
-          # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/.vuepress/dist
+          github_token: ${{ secrets.ACTION_SECERT }}
+          publish_dir: docs/.vuepress/dist
