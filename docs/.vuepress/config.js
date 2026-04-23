@@ -25,9 +25,11 @@ export default defineUserConfig({
       { text: '算法分类', link: '/algorithm/' },
       { text: 'JavaScript', link: '/JavaScript/' },
       { text: '学习', link: '/Career/' },
+      { text: 'AI', link: '/AI/' },
     ],
     sidebarDepth: 3,
     sidebar: {
+      '/AI/': [''],
       '/frontend/': [
         {
           text: '前端',
