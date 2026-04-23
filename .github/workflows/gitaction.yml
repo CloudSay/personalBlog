@@ -5,6 +5,11 @@ on: # 触发条件
     branches: [master]
   # 是否手动触发部署
   workflow_dispatch:
+
+# 设置权限
+permissions:
+  contents: write
+
 jobs:
   docs:
     runs-on: ubuntu-latest # 指定运行所需要的虚拟机环境（必填）
@@ -14,7 +19,6 @@ jobs:
         with:
           # "最近更新时间" 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
-          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -37,5 +41,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           # 部署到 gh-pages 分支
-          token: ${{ secrets.ACTION_SECERT }}
           folder: docs/.vuepress/dist
